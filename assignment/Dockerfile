@@ -1,5 +1,5 @@
 # Stage 1: build
-FROM node:20-alpine AS builder
+FROM node:23-alpine AS builder
 WORKDIR /app
 
 # install dependencies
@@ -15,7 +15,7 @@ RUN npx prisma generate
 RUN npx tsc -b
 
 # Stage 2: production
-FROM node:20-alpine AS production
+FROM node:23-alpine AS production
 WORKDIR /app
 
 # install only production dependencies
