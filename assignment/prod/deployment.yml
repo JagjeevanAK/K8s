@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: express-app
+  lables:
+    app: express-app
 spec:
   replicas: 1
   selector:
@@ -23,6 +25,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: database
+  lables:
+    app: database
 spec:
   replicas: 1
   selector:

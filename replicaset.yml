@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: nginx-replica
+  labels:
+    app: nginx
 spec:
   replicas: 3
   selector:
@@ -17,10 +19,3 @@ spec:
           image: nginx:latest
           ports:
             - containerPort: 80
-          resources:
-            requests:
-              cup: "100m"
-              memory: "200Mi"
-            limits:
-              cpu: "200m"
-              memory: "300Mi"
