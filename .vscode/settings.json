@@ -1,0 +1,8 @@
+{
+    "yaml.schemas": {
+        "/Users/jagjeevankashid/.vscode/extensions/continue.continue-1.1.24-darwin-arm64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ],
+        "kubernetes://schema/v1%40service": "file:///Users/jagjeevankashid/Developer/k8s/k8s-manual-ingress/ops/reverse-proxy/manifest.yml"
+    }
+}

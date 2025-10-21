@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: backend-team
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-test
+  namespace: backend-team
+  labels:
+    app: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+---

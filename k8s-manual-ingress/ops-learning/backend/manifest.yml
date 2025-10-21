@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: backend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pg-backend
+  namespace: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pg-backend
+  template:
+    metadata:
+      labels:
+        app: pg-backend
+    spec:
+      containers:
+      - name: pg-backend
+        image: ghcr.io/jagjeevanak/learning-k8s-pg:3
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pg-backend
+  namespace: backend
+spec:
+  selector:
+    app:  pg-backend
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+  type: ClusterIP
+--- 
