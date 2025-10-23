@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  namespace: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: ghcr.io/jagjeevanak/learning-k8s:latest
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: myapp

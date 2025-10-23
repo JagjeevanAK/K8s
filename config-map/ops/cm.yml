@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myapp
+  namespace: myapp
+data:
+  Database_URL: "postgress://postgress@database/dummy"
+  PORT: "3000"
