@@ -19,4 +19,6 @@ spec:
         - containerPort: 3000
         envFrom:
         - configMapRef:
-            name: myapp
+            name: myconfigmap
+        - secretRef:
+            name: mysecret
